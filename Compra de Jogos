@@ -1,0 +1,45 @@
+nome = input('Insira seu nome: ')
+idade = (float(input('Insira sua idade: ')))
+saldo = (float(input('Insira seu saldo: ')))
+
+def validar_saldo(saldo):
+  if saldo <20:
+    print('Desculpe, você não tem saldo suficiente para prosseguir.',nome)
+    return False 
+  else:
+    print('Ótimo, vamos lá!')
+    return True 
+
+def escolher_jogo():
+  print('Digite uma das opções de compra abaixo:')
+  print('1. Jogo do Mário/ 2. Jogo do Crash/ 3. Jogo de Memória')
+  return int(input())
+
+def calcular_preco(escolha):
+  valor_mario = 23
+  valor_crash = 24
+  valor_memoria = 22
+
+  if escolha == 1:
+    return valor_mario
+  elif escolha == 2:
+    return valor_crash
+  else:
+    return valor_memoria
+
+def desconto(valor):
+  return valor(valor * 0.10)
+
+if validar_saldo(saldo):
+   escolha = escolher_jogo()
+   
+   print(f'Excelente, vou calcular o valor')
+   valor = calcular_preco(escolha)
+   print('Com o Código de desconto o valor é: ', valor, 'reais.')
+
+   print('Te interessa?/1 - Sim/2 - Não')
+   interesse = int(input())
+if interesse ==1:
+      print(f'Sua compra foi efetuada')
+else:
+      print(f'Compra recusada')
